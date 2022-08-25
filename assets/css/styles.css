@@ -8,6 +8,15 @@
   src: url("./raleway-variablefont_wght-webfont.woff");
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --base: #faebd7;
+  --accent: #8a1258;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -73,6 +82,7 @@ button {
 p,
 h3 {
   text-align: center;
+  margin:0;
 }
 
 h3 {
@@ -92,7 +102,7 @@ h3 {
 }
 
 .light {
-  background-color: #faebd7;
+  background-color: var(--base);
 }
 
 canvas {
@@ -102,11 +112,46 @@ canvas {
   z-index: -1;
 }
 
+/* LANDING PAGE */
+header {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:3rem;
+  display:flex;
+  align-items: center;
+  justify-content: right;
+  text-transform:uppercase;
+  font-size:.8rem;
+}
+header > a {
+  padding:1rem 2rem;
+}
+#wall-l {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  filter:opacity(.5);
+  /* perspective-origin: 0 0; */
+  transform-origin:center left;
+  transform: perspective(2000px) rotateY(30deg);
+    box-shadow:
+        rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
+        rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
+}
 #scrolldown {
   position:fixed;
   bottom:10%;
-  transition:opacity .3s linear;
-  transform-origin:center center;
-  transform:scale(.7);
-  opacity:0;
+  animation:bounce 1.2s ease-in-out infinite;
 }
+@keyframes bounce {
+  50% {transform:translateY(10px)}
+}
+
+/* ABOUT */
+
+/* PORTFOLIO */
+
+/* CONTACT */

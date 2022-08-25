@@ -1,0 +1,112 @@
+@font-face {
+  font-family: fredoka;
+  src: url("./fredoka-variablefont_wdthwght-webfont.woff");
+}
+
+@font-face {
+  font-family: raleway;
+  src: url("./raleway-variablefont_wght-webfont.woff");
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: #777;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #bbb;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  font-family: raleway;
+  font-weight: 600;
+  font-size: 18px;
+  z-index: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+button {
+  padding: 1rem 3rem;
+  cursor: pointer;
+  font-family: fredoka;
+  font-size: .9rem;
+  font-weight: 500;
+  border-radius: 4px;
+  background-color: #222;
+  color: white;
+}
+
+p,
+h3 {
+  text-align: center;
+}
+
+h3 {
+  max-width: 70vw;
+  line-height: 2rem;
+}
+
+.b {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: fredoka;
+  margin: 0;
+}
+
+.dark {
+  background-color: #222;
+}
+
+.light {
+  background-color: #faebd7;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#scrolldown {
+  position:fixed;
+  bottom:10%;
+  transition:opacity .3s linear;
+  transform-origin:center center;
+  transform:scale(.7);
+  opacity:0;
+}

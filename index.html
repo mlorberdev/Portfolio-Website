@@ -148,7 +148,30 @@
       teaching -->
     </article>
 
+    <!-- CONTACT -->
     <article id="contact" class="light">
+      <section>
+        <p>Whether you're interested in working together or just want to say hello, I'd love to hear from you :)</p>
+        <br>
+        <div class="contact-form">
+          <div id="form-messages"></div>
+          <form id="ajax-contact" method="post" role="form" action="contact.php" data-toggle="validator">
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" placeholder="NAME" data-error="Field cannot be empty" required>
+              <span class="form-control-feedback" aria-hidden="true"></span>
+              <div class="help-block with-errors"></div>
+              <div class="form-group has-feedback"></div>
+              <input type="email" class="form-control" id="email" name="email" placeholder="EMAIL" data-error="Field cannot be empty" required>
+              <div class="help-block with-errors"></div>
+              <div class="form-group has-feedback"></div>
+              <textarea data-minlength="10" class="form-control" id="message" name="message" placeholder="MESSAGE" data-error="Minimum 10 characters" required></textarea>
+              <span class="form-control-feedback" aria-hidden="true"></span>
+              <div class="help-block with-errors"></div>
+              <button type="submit" id="submit" name="submit">SEND MESSAGE</button>
+            </div>
+          </form>
+        </div>
+      </section>
       <footer></footer>
     </article>
 

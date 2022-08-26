@@ -1,4 +1,4 @@
-!(function () {
+window.onload = function () {
   let d = document.getElementsByTagName("main")[0].innerHTML;
   let l = document.getElementById("wall-l");
   l.innerText = d;
@@ -10,7 +10,6 @@
   const int = setInterval(() => {
     let c = u.charAt(n);
     n === u.length ? clearInterval(int) : n++;
-    if (c === ' ') t.innerHTML += '<span>&nbsp;</span>';
-    else t.innerHTML += c;
-  }, 60);
-})();
+    c === ' ' ? t.innerHTML += '<span>&nbsp;</span>' : t.innerHTML += c;
+  }, 80);
+}

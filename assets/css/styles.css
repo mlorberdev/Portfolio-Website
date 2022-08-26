@@ -10,6 +10,7 @@
 
 * {
   scroll-behavior: smooth;
+    cursor: url("data:image/svg+xml,%3Csvg width='8mm' height='8mm' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='3.5' style='fill:%23222;opacity:.4;'/%3E%3C/svg%3E") 4 4, default;
 }
 
 :root {
@@ -24,6 +25,7 @@
 a {
   color: #777;
   text-decoration: none;
+  transition:transform .5s ease-in-out;
 }
 
 a:hover {
@@ -57,20 +59,22 @@ main {
   position: fixed;
   left: 0;
   top: 0;
+  scroll-snap-type: y mandatory;
 }
 
 article {
+  position:relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   min-width: 100vw;
   min-height: 100vh;
+  scroll-snap-align: start;
 }
 
 button {
   padding: 1rem 3rem;
-  cursor: pointer;
   font-family: fredoka;
   font-size: .9rem;
   font-weight: 500;
@@ -124,33 +128,110 @@ header {
   justify-content: right;
   text-transform:uppercase;
   font-size:.8rem;
+  background-color: #fff;
+  z-index:100;
 }
-header > a {
+footer {
+  position: absolute;
+  bottom: 0;
+  right:0;
+  display:flex;
+  flex-direction: column;
+  font-size:.8rem;
+}
+header > a,
+footer > a {
   padding:1rem 2rem;
+}
+#who {
+  transform-origin:center center;
+  transform:translateX(25vw);
 }
 #wall-l {
   position:absolute;
-  top:0;
+  top:10vh;
   left:0;
   width:100vw;
+  height:80vh;
   filter:opacity(.5);
-  /* perspective-origin: 0 0; */
+  padding:2rem;
   transform-origin:center left;
   transform: perspective(2000px) rotateY(30deg);
     box-shadow:
         rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
         rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
+  overflow:hidden;
+  font-size:.7rem;
 }
 #scrolldown {
   position:fixed;
   bottom:10%;
   animation:bounce 1.2s ease-in-out infinite;
 }
+#fn {
+  position:absolute;
+  bottom:4px;
+  left:4px;
+  font-size:.5rem;
+  color:#222;
+}
 @keyframes bounce {
   50% {transform:translateY(10px)}
 }
+@media only screen and (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+  #who {
+    transform:rotate(90deg);
+  }
+}
 
 /* ABOUT */
+.border {
+  position:relative;
+  min-width:40vw;
+  background-color:#222;
+  margin-bottom:.4rem;
+  border-radius:3px;
+  overflow:hidden;
+  z-index:0;
+}
+.border > span {
+  position:absolute;
+  top:0;
+  right:0;
+  height:100%;display: flex;
+  align-items: center;
+  font-size:.7rem;
+  padding-right:.4rem;
+  color: #ffffffbb;
+}
+.fill {
+  position:absolute;
+  content:"";
+  height:100%;
+  background-color: var(--accent);
+  opacity:.8;
+  text-align: right;
+  z-index: 1;
+}
+.txt {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #640b3f;
+  opacity:.8;
+  font-size: .8rem;
+  color: #fff;
+  padding: .5rem .5rem;
+  display: flex;
+  align-items: center;
+  z-index:2;
+}
+
 
 /* PORTFOLIO */
 

@@ -15,13 +15,20 @@
 
 <body>
   <main>
+    <!-- NOSCRIPT -->
+    <noscript id="ns">
+      <p style="font-size:5rem">JS</p><br><p><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> is currently disabled in your browser.</p><br><p>Please <a href="https://www.enable-javascript.com/">enable it</a> and refresh the page to continue.</p>
+    </noscript>
+
+    <!-- ROTATOR -->
+    <div id="landscape">
+      <div id="rotator" class="flex"></div>
+      <span>Please rotate the device</span>
+    </div>
 
     <!-- LOADER -->
     <div id="loader">
-      <div id="counter" style="display:none"></div>
-      <noscript></noscript>
-      <div id="rotator"></div>
-      <div id="please-rotate">Please rotate your device</div>
+      <div id="counter"></div>
     </div>
 
     <!-- LANDING PAGE -->
@@ -37,7 +44,7 @@
       <section id="who">
         <p style="font-size:3rem">Matthew<span style="color:var(--accent);opacity:.8">/</span>Lorber</p>
         <p id="my-spec">&nbsp;</p>
-        <button>CONTACT</button>
+        <button><a href="mailto:mlorber.dev@gmail.com" class="in-btn">CONTACT</a></button>
       </section>
       <div class="scrolldown">
         <svg id="scroller" width="25" height="15" viewBox="0 0 25 15" stroke-linecap="round" stroke-linejoin="round" fill="none"
@@ -121,18 +128,10 @@
         </div>
       </section>
       <section class="btn-group">
-        <a href="https://tealprod.tea.state.tx.us/ECOS-External/EcosOnline/VirtCert" target="_blank">
-          <button>TX</button>
-        </a>
-        <a href="https://cool.randasolutions.com/Public/Search" target="_blank">
-          <button>CO</button>
-        </a>
-        <a href="./assets/cv.pdf" target="_blank">
-          <button>UK</button>
-        </a>
-        <a href="./assets/cv.pdf" target="_blank">
-          <button>CV</button>
-        </a>
+        <button><a href="https://tealprod.tea.state.tx.us/ECOS-External/EcosOnline/VirtCert" class="in-btn" target="_blank">TX</a></button>
+        <button><a href="https://cool.randasolutions.com/Public/Search" class="in-btn" target="_blank">CO</a></button>
+        <button><a href="./assets/cv.pdf" class="in-btn" target="_blank">UK</a></button>
+        <button><a href="./assets/cv.pdf" class="in-btn" target="_blank">CV</a></button>
       </section>
     </article>
 

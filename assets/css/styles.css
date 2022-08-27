@@ -10,7 +10,7 @@
 
 * {
   scroll-behavior: smooth;
-    cursor: url("data:image/svg+xml,%3Csvg width='8mm' height='8mm' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='3.5' style='fill:%23222;opacity:.4;'/%3E%3C/svg%3E") 4 4, default;
+  cursor: url("data:image/svg+xml,%3Csvg width='8mm' height='8mm' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='3.5' style='fill:%23222;opacity:.4;'/%3E%3C/svg%3E") 4 4, default;
 }
 
 :root {
@@ -22,11 +22,31 @@
 ::-webkit-scrollbar {
   display: none;
 }
-#please-rotate {
-  font-family:fredoka;
-  font-weight:600;
-  position:absolute;
-  bottom:10%;
+
+.flex {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+noscript,
+#landscape {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background-color: white;
+  color:#222;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+noscript {
+  z-index:103;
+}
+#landscape {
+  z-index:102;
 }
 #rotator {
   transform-origin:center center;
@@ -36,6 +56,12 @@
   border-radius:8px;
   animation:please-turn 3s ease-in-out infinite alternate;
 }
+#landscape > span {
+  font-family: fredoka;
+  font-weight: 600;
+  position:fixed;
+  bottom:10%;
+}
 @keyframes please-turn {
   50% {
     transform:rotate(90deg);
@@ -44,17 +70,19 @@
     transform:rotate(90deg);
   }
 }
-a {
+
+a:not(noscript > p > a) {
   color: #555;
   text-decoration: none;
-}
-a {
   padding: 1rem 2rem;
   margin: 5px 3px 0 0;
-  transition: background-color 1s ease-in-out;
 }
-a:hover,
-button:not(a > button):hover {
+a.in-btn {
+  padding:0;
+  margin:0;
+}
+a:not(a.in-btn):hover,
+button:hover {
   background-color: #22222255;
 }
 button {
@@ -63,14 +91,14 @@ button {
   font-family: raleway;
   font-size: .8rem;
   font-weight: 600;
-  padding: 1rem 2rem;
   border: none;
   padding: 1rem 2rem;
   border-top: 1px solid #222;
   letter-spacing: 2px;
+}
+a,button {
   transition: background-color 1s ease-in-out;
 }
-
 body {
   margin: 0;
   display: flex;
@@ -210,7 +238,7 @@ header {
   width:100vw;
   height:80vh;
   filter:opacity(.5);
-  padding:2rem;
+  padding:0 2rem;
   transform-origin:center left;
   transform: perspective(2000px) rotateY(30deg);
   box-shadow:

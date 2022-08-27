@@ -1,13 +1,19 @@
 // HOMEPAGE ANIMATION
 !function () {
   // populate landing page wall with document's html
-  let d = document.getElementsByTagName("main")[0].innerHTML;
-  let l = document.getElementById("wall-l");
-  l.innerText = d;
+  document.getElementById("wall-l").innerText = document.getElementsByTagName("main")[0].innerHTML;
+  // remove noscript tag if JS enabled
+  document.getElementById("ns").style.display = "none";
+  // remove device rotate if in landscape
+  function resize() {
+    let scr = document.getElementById("landscape");
+    innerWidth > innerHeight ? scr.style.display = "none" : scr.style.display = "flex";
+  }
+  window.addEventListener("resize", resize);
+  resize();
   // run loading animation
   const ldr = document.getElementById("loader");
   const y = document.getElementById("counter");
-  y.style.display = "block";
   let x = 10;
   const w = setInterval(() => {
     y.innerText = x + "%";
@@ -19,7 +25,7 @@
     }
   }, 50);
   // run whois text animation
-  function whois() {
+  async function whois() {
     let t = document.getElementById("my-spec");
     let u = `FULL-STACK DEVELOPER & EDUCATOR `;
     let n = -1;

@@ -219,7 +219,7 @@ header {
   overflow:hidden;
   font-size:.7rem;
 }
-#scrolldown {
+.scrolldown {
   position:absolute;
   bottom:5%;
   animation:bounce 1.2s ease-in-out infinite;

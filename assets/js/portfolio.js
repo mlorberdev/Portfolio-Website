@@ -39,12 +39,10 @@ function carousel(root) {
     
     if (bfc) {
       for (let i = 0; i < n; i++) {
-        if (window.CP.shouldStopExecution(4)) break; if (window.CP.shouldStopExecution(3)) break;
+        // if (window.CP.shouldStopExecution(4)) break; if (window.CP.shouldStopExecution(3)) break;
         images[i].style.backfaceVisibility = 'hidden';
       }
-      
     }
-
     turn(img);
   }
 

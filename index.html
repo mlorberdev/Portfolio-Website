@@ -15,14 +15,18 @@
 
 <body>
   <main>
+
     <!-- LOADER -->
     <div id="loader">
-      <div id="counter"></div>
+      <div id="counter" style="display:none"></div>
+      <noscript></noscript>
+      <div id="rotator"></div>
+      <div id="please-rotate">Please rotate your device</div>
     </div>
 
     <!-- LANDING PAGE -->
     <article id="landing">
-      
+
       <!-- HEADER -->
       <header>
         <a href="#about">about</a>
@@ -33,7 +37,7 @@
       <section id="who">
         <p style="font-size:3rem">Matthew<span style="color:var(--accent);opacity:.8">/</span>Lorber</p>
         <p id="my-spec">&nbsp;</p>
-        <a href="#contact"><button>CONTACT</button></a>
+        <button>CONTACT</button>
       </section>
       <div id="scrolldown">
         <svg width="25" height="15" viewBox="0 0 25 15" stroke-linecap="round" stroke-linejoin="round" fill="none"
@@ -128,16 +132,21 @@
 
     <!-- PORTFOLIO -->
     <article id="portfolio">
-      <div id="scroll-r">R</div>
-      <div id="scroll-l">L</div>
-      <section class="carousel">
-        <div class="slide" class="show">
-          <div class="title">Creative JavaScript</div>
-          <p class="descr">This is a collection of generative art projects which duplicate or elaborate on some first generation artists' work.</p>
-          <p>Coding is done in JavaScript ES2022 modules;</p>
-          <img class="img-main" src="" alt="generative art mosaic" />
-        </div>
-      </section>
+      <div class="carousel">
+        <figure>
+          <img src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="">
+          <img src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="">
+          <img src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="">
+          <img src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="">
+          <img src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="">
+          <img src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="">
+          <img src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="">
+        </figure>
+        <nav>
+          <button class="nav prev">Prev</button>
+          <button class="nav next">Next</button>
+        </nav>
+      </div>
       <!-- jamstack blog
       creative js
       theme
@@ -150,35 +159,14 @@
 
     <!-- CONTACT -->
     <article id="contact" class="light">
-      <section>
-        <p>Whether you're interested in working together or just want to say hello, I'd love to hear from you :)</p>
-        <br>
-        <div class="contact-form">
-          <div id="form-messages"></div>
-          <form id="ajax-contact" method="post" role="form" action="contact.php" data-toggle="validator">
-            <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" placeholder="NAME" data-error="Field cannot be empty" required>
-              <span class="form-control-feedback" aria-hidden="true"></span>
-              <div class="help-block with-errors"></div>
-              <div class="form-group has-feedback"></div>
-              <input type="email" class="form-control" id="email" name="email" placeholder="EMAIL" data-error="Field cannot be empty" required>
-              <div class="help-block with-errors"></div>
-              <div class="form-group has-feedback"></div>
-              <textarea data-minlength="10" class="form-control" id="message" name="message" placeholder="MESSAGE" data-error="Minimum 10 characters" required></textarea>
-              <span class="form-control-feedback" aria-hidden="true"></span>
-              <div class="help-block with-errors"></div>
-              <button type="submit" id="submit" name="submit">SEND MESSAGE</button>
-            </div>
-          </form>
-        </div>
-      </section>
+      
       <footer></footer>
     </article>
 
   </main>
 
-  <script src="./assets/js/index.js"></script>
   <script src="./assets/js/landing.js"></script>
+  <script src="./assets/js/portfolio.js"></script>
 </body>
 
 </html>

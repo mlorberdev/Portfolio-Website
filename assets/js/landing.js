@@ -5,6 +5,7 @@ window.onload = function () {
   
   const ldr = document.getElementById("loader");
   const y = document.getElementById("counter");
+  y.style.display = "block";
   let x = 10;
   const w = setInterval(() => {
     y.innerText = x + "%";
@@ -17,7 +18,6 @@ window.onload = function () {
   }, 50);
 
   function whois() {
-
     let t = document.getElementById("my-spec");
     let u = `FULL-STACK DEVELOPER & EDUCATOR `;
     let n = -1;

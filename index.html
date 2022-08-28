@@ -7,9 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matt Lorber | Personal</title>
   <meta name="description" content="Teacher and full-stack developer">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 
@@ -36,13 +33,15 @@
 
       <!-- HEADER -->
       <header>
+        <a href="#landing">home</a>
         <a href="#about">about</a>
+        <a href="#stacks">tech</a>
+        <a href="#skills">skills</a>
         <a href="#portfolio">portfolio</a>
-        <a href="#contact">contact</a>
       </header>
-      <div id="wall-l"></div>
+      <div id="wall"></div>
       <section id="who">
-        <p style="font-size:3rem">Matthew<span style="color:var(--accent);opacity:.8">/</span>Lorber</p>
+        <p style="font-size:3rem">Matthew Lorber</p>
         <p id="my-spec">&nbsp;</p>
         <button><a href="mailto:mlorber.dev@gmail.com" class="in-btn">CONTACT</a></button>
       </section>
@@ -59,16 +58,21 @@
         <a href="https://github.com/mlorberdev" target="_blank">GH</a>
       </footer>
     </article>
-
+    
     <!-- ABOUT -->
     <article id="about" class="light">
+      <p>I provide a full range of services concerning web development, from the backend application to frontend design.</p>
+      <p></p>
+    </article>
+    <!-- STACKS -->
+    <article id="stacks" class="light">
       <p class="b">I build amazing</p>
       <p class="b">experiences and solutions</p>
       <p class="c">
         Fullstack Developer, Educator, and Technology Manager with
         experience in technology operations, client service, web, server, desktop and mobile.
       </p>
-      <section id="skills">
+      <section id="stack">
         <div class="border">
           <div class="fill" style="width:92%">JAVASCRIPT, TYPESCRIPT, JQUERY, NODE, GAS</div>
           <span>92%</span>
@@ -98,8 +102,8 @@
       </div>
     </article>
 
-    <!-- SECOND ABOUT / TEACHING -->
-    <article>
+    <!-- SKILLS -->
+    <article id="skills">
       <p class="b">I build amazing</p>
       <p class="b">relationships <span style="font-size:1.4rem;color:var(--accent)">♥</span> with people</p>
       <p class="c">
@@ -133,6 +137,12 @@
         <button><a href="./assets/cv.pdf" class="in-btn" target="_blank">UK</a></button>
         <button><a href="./assets/cv.pdf" class="in-btn" target="_blank">CV</a></button>
       </section>
+      <div class="scrolldown">
+        <svg id="scroller" width="25" height="15" viewBox="0 0 25 15" stroke-linecap="round" stroke-linejoin="round"
+          fill="none" stroke="var(--accent)" stroke-width="4">
+          <polyline points="5,5 12.5,12.5 20,5" />
+        </svg>
+      </div>
     </article>
 
     <!-- PORTFOLIO -->
@@ -152,6 +162,13 @@
           <button class="nav next">Next</button>
         </nav>
       </div>
+      <section class="pm">
+        <div class="pt">title</div>
+        <div class="pd">description</div>
+        <div class="ts">tech stack</div>
+        <img src="" alt="" />
+        <a href="#">codepen or live link or github link></a>
+      </section>
       <!-- jamstack blog
       creative js
       theme
@@ -160,12 +177,6 @@
       games:wrdl,bogl,snake,mines
       writing,editing
       teaching -->
-    </article>
-
-    <!-- CONTACT -->
-    <article id="contact" class="light">
-      
-      <footer></footer>
     </article>
 
   </main>

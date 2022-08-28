@@ -15,8 +15,8 @@
 
 :root {
   --base: #f1f1f1;
-  --accent: #333;
-  --accent-lt: #33333355;
+  --accent: #0d73a3;
+  --accentlite: #0d73a355;
 }
 
 ::-webkit-scrollbar {
@@ -83,17 +83,18 @@ a.in-btn {
 }
 a:not(a.in-btn):hover,
 button:hover {
-  background-color: #22222255;
+  /* background-color: #22222255; */
+  background-color: var(--accentlite);
 }
 button {
   background: transparent;
-  color: #555;
+  color: #333;
   font-family: raleway;
   font-size: .8rem;
   font-weight: 600;
   border: none;
   padding: 1rem 2rem;
-  border-top: 1px solid #222;
+  border-top: 1px solid var(--accent);
   letter-spacing: 2px;
 }
 a,button {
@@ -110,8 +111,8 @@ body {
   left: 0;
   width: 100vw;
   font-family: raleway;
-  font-weight: 300;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight:600;
   z-index: 0;
 }
 
@@ -122,7 +123,6 @@ body {
   width:100vw;
   height:100vh;
   background-color: #f1f1f1;
-  color:#444;
   z-index: 100;
   display:flex;
   flex-direction: column;
@@ -133,6 +133,7 @@ body {
 #counter {
   font-family: monospace;
   font-size: 4rem;
+  transition:color 1.5s linear;
 }
 main {
   display: flex;
@@ -175,10 +176,6 @@ h3 {
   font-weight: 800;
   font-family: fredoka;
   margin: 0;
-}
-
-.dark {
-  background-color: #222;
 }
 
 .light {
@@ -230,7 +227,7 @@ header {
   align-items: center;
   color:#222222bb;
 }
-#wall-l {
+#wall {
   position:absolute;
   top:10vh;
   left:0;
@@ -255,7 +252,7 @@ header {
   50% {transform:translateY(10px)}
 }
 
-/* ABOUT */
+/* STACKS */
 .border {
   position:relative;
   min-width:40vw;
@@ -330,16 +327,28 @@ header {
   top: 0;
 }
 
-/* CONTACT */
-
+.pm {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  display:none;
+}
 
 /* RESPONSIVE */
 @media only screen and (max-width: 768px) {
+  body {
+    font-size:12px;
+  }
   header {
     justify-content: center;
     width: 100vw;
   }
-
+  #wall {
+    font-size:.5rem;
+    padding:0 .5rem;
+  }
   #who {
     transform: scale(.7);
   }

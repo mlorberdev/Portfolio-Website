@@ -29,15 +29,15 @@
     </div>
 
     <!-- LANDING PAGE -->
-    <article id="landing">
+    <article id="home">
 
       <!-- HEADER -->
       <header>
-        <a href="#landing">home</a>
-        <a href="#about">about</a>
-        <a href="#stacks">tech</a>
-        <a href="#skills">skills</a>
-        <a href="#portfolio">portfolio</a>
+        <a href="#home" name="home">home</a>
+        <a href="#about" name="about">about</a>
+        <a href="#tech" name="tech">tech</a>
+        <a href="#skills" name="skills">skills</a>
+        <a href="#portfolio" name="portfolio">portfolio</a>
       </header>
       <div id="wall"></div>
       <section id="who">
@@ -60,20 +60,33 @@
     </article>
     
     <!-- ABOUT -->
-    <article id="about" class="light">
-      <p>I provide a full range of services concerning web development, from the backend application to frontend design.</p>
-      <p></p>
+    <article id="about" class="flex row">
+      <section id="about-left" class="about-section flex col">
+        <div>coder</div>
+      </section>
+      <section id="about-right" class="about-section flex col">
+        <div>teacher</div>
+      </section>
+      <!-- <p>I provide a full range of services concerning web development, from the backend application to frontend design.</p> -->
+      
     </article>
-    <!-- STACKS -->
-    <article id="stacks" class="light">
-      <p class="b">I build amazing</p>
-      <p class="b">experiences and solutions</p>
-      <p class="c">
+    <!-- TECH -->
+    <article id="tech">
+      <section id="bar" class="light flex col">
+        <p class="bar-title">Title</p>
+        <p class="bar-text">Lorem ipsum</p>
+      </section>
+      <section id="st" class="flex col">
+        <img src="./assets/images/tech.svg" alt="tech infographic"/>
+      </section>
+      <!-- <p class="b">I build amazing</p>
+      <p class="b">experiences and solutions</p> -->
+      <!-- <p class="c">
         Fullstack Developer, Educator, and Technology Manager with
         experience in technology operations, client service, web, server, desktop and mobile.
-      </p>
-      <section id="stack">
-        <div class="border">
+      </p> -->
+      <!-- <section id="stack"> -->
+        <!-- <div class="border">
           <div class="fill" style="width:92%">JAVASCRIPT, TYPESCRIPT, JQUERY, NODE, GAS</div>
           <span>92%</span>
         </div>
@@ -92,14 +105,8 @@
         <div class="border">
           <div class="fill" style="width:82%">GIT, BASH, CLI, API, POSTMAN, A/B TEST</div>
           <span>82%</span>
-        </div>
-      </section>
-      <div class="scrolldown">
-        <svg id="scroller" width="25" height="15" viewBox="0 0 25 15" stroke-linecap="round" stroke-linejoin="round"
-          fill="none" stroke="var(--accent)" stroke-width="4">
-          <polyline points="5,5 12.5,12.5 20,5" />
-        </svg>
-      </div>
+        </div> -->
+      <!-- </section> -->
     </article>
 
     <!-- SKILLS -->
@@ -147,15 +154,16 @@
 
     <!-- PORTFOLIO -->
     <article id="portfolio">
+      <p>click or type v to view</p>
       <div id="carousel">
         <figure>
-          <img class="project" src="https://source.unsplash.com/mCg0ZgD7BgU/800x533" alt="" />
-          <img class="project" src="https://source.unsplash.com/EbuaKnSm8Zw/800x533" alt="" />
-          <img class="project" src="https://source.unsplash.com/kG38b7CFzTY/800x533" alt="" />
-          <img class="project" src="https://source.unsplash.com/VkwRmha1_tI/800x533" alt="" />
-          <img class="project" src="https://source.unsplash.com/1FWICvPQdkY/800x533" alt="" />
-          <img class="project" src="https://source.unsplash.com/bjhrzvzZeq4/800x533" alt="" />
-          <img class="project" src="https://source.unsplash.com/7mUXaBBrhoA/800x533" alt="" />
+          <img class="project" src="./assets/images/tech.svg" alt="" />
+          <img class="project" src="./assets/images/tech.svg" alt="" />
+          <img class="project" src="./assets/images/tech.svg" alt="" />
+          <img class="project" src="./assets/images/tech.svg" alt="" />
+          <img class="project" src="./assets/images/tech.svg" alt="" />
+          <img class="project" src="./assets/images/tech.svg" alt="" />
+          <img class="project" src="./assets/images/tech.svg" alt="" />
         </figure>
         <nav>
           <button class="nav">Prev</button>

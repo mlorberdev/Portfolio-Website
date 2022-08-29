@@ -28,6 +28,12 @@
   align-items: center;
   justify-content: center;
 }
+.row {
+  flex-direction: row;
+}
+.col {
+  flex-direction: column;
+}
 noscript,
 #landscape {
   position:fixed;
@@ -98,7 +104,7 @@ button {
   letter-spacing: 2px;
 }
 a,button {
-  transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out, border 1s ease-in-out;
 }
 body {
   margin: 0;
@@ -203,7 +209,7 @@ header {
   font-size:.8rem;
   z-index:99;
 }
-#landing > footer {
+#home > footer {
   position: fixed;
   bottom: 0;
   right:0;
@@ -212,7 +218,7 @@ header {
   font-size:.8rem;
   z-index:10;
 }
-#landing > footer > a {
+#home > footer > a {
   padding: 1rem;
   margin:0 5px 5px 0;
 }
@@ -252,7 +258,35 @@ header {
   50% {transform:translateY(10px)}
 }
 
-/* STACKS */
+/* ABOUT */
+.about-section {
+  width:50vw;
+  height:100vh;
+}
+.about-section > div {
+  width:30%;
+  height:30%;
+  border-radius: 50%;
+  background-color: var(--base);
+}
+
+/* TECH */
+#bar {
+  position:absolute;
+  left:0;
+  width:35vw;
+  height:100vh;
+}
+#st {
+  position:absolute;
+  right:0;
+  width:65vw;
+  height:100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* SKILLS */
 .border {
   position:relative;
   min-width:40vw;

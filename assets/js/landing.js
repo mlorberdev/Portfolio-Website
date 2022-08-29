@@ -9,15 +9,15 @@
     let scr = document.getElementById("landscape");
     innerWidth > innerHeight ? scr.style.display = "none" : scr.style.display = "flex";
   }
-  window.addEventListener("resize", resize);
+  window.addEventListener("resize", () => { resize, scr });
   resize();
   // run loading animation
   const ldr = document.getElementById("loader");
   const y = document.getElementById("counter");
-  y.animate([{ color: 'lightgray' }, { color: 'darkgray' }], { duration: 3000, iterations: 1 });
+  y.animate([{ color: 'lightgray' }, { color: 'var(--accent)' }], { duration: 3000, iterations: 1 });
   let x = 10;
   const w = setInterval(() => {
-    y.innerText = x;
+    y.innerText = `${x}%`;
     if (x < 100) x += 2;
     else {
       clearInterval(w);
@@ -36,4 +36,12 @@
       c === ' ' ? t.innerHTML += '<span>&nbsp;</span>' : t.innerHTML += c;
     }, 80);
   }
+  // set scroll into view positions
+  void function scr() {
+    const articles = document.querySelectorAll("article");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => document.getElementsByName(entry.target.id)[0].style.borderBottom = entry.isIntersecting ? "1px solid var(--accent)" : "0px solid var(--accent)");
+    }, { root: null, rootMargin: '0px', threshold: 1 });
+    articles.forEach(article => observer.observe(article));
+  }();
 }();

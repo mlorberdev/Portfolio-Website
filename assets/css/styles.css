@@ -138,6 +138,7 @@ body {
 }
 #counter {
   font-family: monospace;
+  color:#555;
   font-size: 4rem;
   transition:color 1.5s linear;
 }
@@ -239,7 +240,7 @@ header {
   left:0;
   width:100vw;
   height:80vh;
-  filter:opacity(.5);
+  filter:opacity(.4);
   padding:0 2rem;
   transform-origin:center left;
   transform: perspective(2000px) rotateY(30deg);
@@ -247,6 +248,8 @@ header {
     rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
     rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
   overflow:hidden;
+  color:#444;
+  font-family:monospace;
   font-size:.7rem;
 }
 .scrolldown {

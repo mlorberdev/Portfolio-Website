@@ -27,11 +27,11 @@
     }
   }, 50);
 
-  // Set scroll into view positions for navs and observer
+  // Set scroll into view positions for navs and observers
   function scroll() {
     const articles = document.querySelectorAll("article");
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => document.getElementsByName(entry.target.id)[0].style.borderBottom = entry.isIntersecting ? "1px solid var(--accent)" : "0px solid var(--accent)");
+      entries.forEach(entry => document.getElementsByName(entry.target.id)[0].style.borderBottom = entry.isIntersecting ? "1px solid #555" : "0px solid #555");
     }, { root: null, rootMargin: '0px', threshold: 1 });
     articles.forEach(article => observer.observe(article));
   } scroll();

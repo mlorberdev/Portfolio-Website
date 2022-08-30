@@ -10,7 +10,6 @@ window.addEventListener('load', () => {
   window.addEventListener('resize', setupCarousel);
 
   function setupCarousel() {
-
     let gap = innerWidth > 768 ? 40 : 20;
     const apothem = parseFloat(getComputedStyle(images[0]).width) / (2 * Math.tan(Math.PI / n));
     fig.style.transformOrigin = `50% 50% ${-apothem}px`;

@@ -249,7 +249,7 @@ header {
     rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
   overflow:hidden;
   color:#444;
-  font-family:monospace;
+  font-family:fredoka;
   font-size:.7rem;
 }
 .scrolldown {
@@ -262,16 +262,6 @@ header {
 }
 
 /* ABOUT */
-.about-section {
-  width:50vw;
-  height:100vh;
-}
-.about-section > div {
-  width:30%;
-  height:30%;
-  border-radius: 50%;
-  background-color: var(--base);
-}
 
 /* TECH */
 #bar {

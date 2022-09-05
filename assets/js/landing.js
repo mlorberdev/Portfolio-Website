@@ -1,6 +1,6 @@
 !function () {
   // Populate landing page wall with document's html
-  document.getElementById("wall").innerText = document.getElementsByTagName("main")[0].innerHTML;
+  document.getElementById("wall").innerText = document.getElementsByTagName("html")[0].innerHTML;
 
   // Remove noscript tag if JS enabled
   document.getElementById("ns").style.display = "none";
@@ -9,23 +9,17 @@
   function resize() {
     let scr = document.getElementById("landscape");
     innerWidth > innerHeight ? scr.style.display = "none" : scr.style.display = "flex";
-  }
+  } resize();
   window.addEventListener("resize", () => { resize(); scroll() });
-  resize();
 
   // Run loading animation
-  const ldr = document.getElementById("loader");
-  const y = document.getElementById("counter");
-  let x = 10;
-  const w = setInterval(() => {
-    y.innerText = `${x}%`;
-    if (x < 100) x += 2;
-    else {
-      clearInterval(w);
-      ldr.style.opacity = "0";
-      setTimeout(() => { ldr.remove() }, 300);
-    }
-  }, 50);
+  window.addEventListener("load", () => {
+    document.getElementById("ldr").remove();
+    document.getElementById("enter").style.display = "block";
+  });
+
+  // Close load screen and enter site
+  document.getElementById("enter").addEventListener("click", () => document.getElementById("loader").remove());
 
   // Set scroll into view positions for navs and observers
   function scroll() {

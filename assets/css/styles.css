@@ -22,7 +22,6 @@
 ::-webkit-scrollbar {
   display: none;
 }
-
 .flex {
   display:flex;
   align-items: center;
@@ -33,6 +32,9 @@
 }
 .col {
   flex-direction: column;
+}
+.fade {
+  transition: opacity .3s linear;
 }
 noscript,
 #landscape {
@@ -86,10 +88,10 @@ a:not(noscript > p > a) {
 a.in-btn {
   padding:0;
   margin:0;
+  z-index:101;
 }
 a:not(a.in-btn):hover,
 button:hover {
-  /* background-color: #22222255; */
   background-color: var(--accentlite);
 }
 button {
@@ -122,6 +124,7 @@ body {
   z-index: 0;
 }
 
+/* LOADER */
 #loader {
   position:fixed;
   top:0;
@@ -130,18 +133,16 @@ body {
   height:100vh;
   background-color: #f1f1f1;
   z-index: 100;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition:opacity .3s linear;
 }
-#counter {
-  font-family: monospace;
-  color:#555;
-  font-size: 4rem;
-  transition:color 1.5s linear;
+#enter {
+  animation:shrink 4s linear;
+  font-size: .8rem;
 }
+@keyframes shrink {
+  0% {font-size:250vw}
+  100% {font-size:.8rem}
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -223,23 +224,23 @@ header {
   padding: 1rem;
   margin:0 5px 5px 0;
 }
-#my-spec {
-  margin-bottom:1rem;
-}
 #who {
-  transform-origin:center center;
-  transform:translateX(25vw);
   display:flex;
   flex-direction: column;
   align-items: center;
   color:#222222bb;
 }
+#iam {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: .3rem
+}
 #wall {
   position:absolute;
-  top:10vh;
+  top:5vh;
   left:0;
   width:100vw;
-  height:80vh;
+  height:90vh;
   filter:opacity(.4);
   padding:0 2rem;
   transform-origin:center left;
@@ -249,8 +250,9 @@ header {
     rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
   overflow:hidden;
   color:#444;
-  font-family:fredoka;
-  font-size:.7rem;
+  font-family:monospace;
+  font-size:.4rem;
+  user-select: none;
 }
 .scrolldown {
   position:absolute;
@@ -262,6 +264,25 @@ header {
 }
 
 /* ABOUT */
+.timeline {
+  position:relative;
+  border-bottom:3px solid #222;
+  border-left:2px solid #222;
+  padding:1rem;
+}
+.t-year {
+  font-family:fredoka;
+  font-size: 1.4rem;
+}
+.t-dot {
+  width: 10px;
+  height: 10px;
+  position:absolute;
+  bottom:-7px;
+  left:-5px;
+  border-radius:50%;
+  background-color: #222;
+}
 
 /* TECH */
 #bar {

@@ -122,6 +122,7 @@ body {
   font-size: 16px;
   font-weight:600;
   z-index: 0;
+  background-color: var(--base);
 }
 
 /* LOADER */
@@ -131,16 +132,13 @@ body {
   left:0;
   width:100vw;
   height:100vh;
-  background-color: #f1f1f1;
+  background-color:white;
   z-index: 100;
-}
-#enter {
-  animation:shrink 4s linear;
-  font-size: .8rem;
-}
-@keyframes shrink {
-  0% {font-size:250vw}
-  100% {font-size:.8rem}
+  background-size:auto 100% ;
+  background-repeat: no-repeat;
+  background-position:center;
+  opacity:1;
+  transition:opacity 12s linear;
 }
 
 main {
@@ -241,23 +239,26 @@ header {
   left:0;
   width:100vw;
   height:90vh;
-  filter:opacity(.4);
   padding:0 2rem;
-  transform-origin:center left;
-  transform: perspective(2000px) rotateY(30deg);
+  transform-origin:top center;
   box-shadow:
     rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
     rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
   overflow:hidden;
-  color:#444;
+  background-color: white;
+  color:#222;
   font-family:monospace;
   font-size:.4rem;
   user-select: none;
+  z-index:-1;
+  opacity:.8;
+  transition:color 1s linear, transform 1s linear;
 }
-.scrolldown {
+#scrolldown {
   position:absolute;
   bottom:5%;
   animation:bounce 1.2s ease-in-out infinite;
+  visibility:hidden;
 }
 @keyframes bounce {
   50% {transform:translateY(10px)}

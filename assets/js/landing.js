@@ -13,13 +13,23 @@
   window.addEventListener("resize", () => { resize(); scroll() });
 
   // Run loading animation
-  window.addEventListener("load", () => {
-    document.getElementById("ldr").remove();
-    document.getElementById("enter").style.display = "block";
-  });
-
-  // Close load screen and enter site
-  document.getElementById("enter").addEventListener("click", () => document.getElementById("loader").remove());
+  let bg = 0;
+  const ldr = document.getElementById("loader");
+  ldr.style.opacity = 0;
+  const int = setInterval(() => {
+    ldr.style.backgroundImage = `url("./assets/images/a${bg}.webp")`;
+    bg === 9 ? bg = 0 : bg++;
+  }, 100);
+  setInterval(() => {
+    clearInterval(int);
+  }, 10000);
+  setTimeout(() => {
+    ldr.remove();
+    const wal = document.getElementById("wall");
+    wal.style.color = "var(--accent)";
+    wal.style.transform = "perspective(2000px) rotateX(-30deg)";
+    document.getElementById("scrolldown").style.visibility = "visible";
+  }, 12000);
 
   // Set scroll into view positions for navs and observers
   function scroll() {

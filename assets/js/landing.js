@@ -27,9 +27,9 @@
     ldr.remove();
     const wal = document.getElementById("wall");
     wal.style.color = "var(--accent)";
-    wal.style.transform = "perspective(2000px) rotateX(-30deg)";
+    wal.style.transform = "perspective(2000px) rotateY(90deg)";
     document.getElementById("scrolldown").style.visibility = "visible";
-  }, 12000);
+  }, 10000);
 
   // Set scroll into view positions for navs and observers
   function scroll() {

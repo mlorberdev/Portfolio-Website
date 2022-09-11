@@ -79,7 +79,7 @@ noscript {
   }
 }
 
-a:not(noscript > p > a) {
+a:not(noscript > p > a):not(.github-corner) {
   color: var(--accent);
   text-decoration: none;
   padding: 1rem 2rem;
@@ -106,7 +106,7 @@ button {
   letter-spacing: 2px;
 }
 a,button {
-  transition: background-color 1s ease-in-out, border 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
 }
 body {
   margin: 0;
@@ -132,7 +132,7 @@ body {
   left:0;
   width:100vw;
   height:100vh;
-  background-color:white;
+  /* background-color:white; */
   z-index: 100;
   background-size:auto 100% ;
   background-repeat: no-repeat;
@@ -192,10 +192,8 @@ h3 {
 }
 
 canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  position:fixed;
+  z-index: 222;
 }
 
 /* LANDING PAGE */
@@ -291,11 +289,7 @@ header {
 #scrolldown {
   position:absolute;
   bottom:5%;
-  animation:bounce 1.2s ease-in-out infinite;
   visibility:hidden;
-}
-@keyframes bounce {
-  50% {transform:translateY(10px)}
 }
 
 /* ABOUT */
